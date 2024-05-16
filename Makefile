@@ -3,9 +3,13 @@ include config.mk
 
 BIN = new-java-class
 OBJ = \
-	main.o
+	main.o \
+	tb2.o
 
 all: $(BIN)
+
+main.o: tb2.h
+tb2.o: tb2.h
 
 $(BIN): $(OBJ)
 	$(CC) $(NEW_JAVA_CLASS_LDFLAGS) -o $@ $(OBJ) $(NEW_JAVA_CLASS_LDLIBS)
